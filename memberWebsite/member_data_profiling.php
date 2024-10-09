@@ -15,8 +15,7 @@
 
     <div class="hero-page">
     <div class="two-col context">
-            <h3>Municipality of</h3>
-            <h1>TAGOLOAN</h1>
+
         </div>
         <div class="two-col cards">
         <div class="card">
