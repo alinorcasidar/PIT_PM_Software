@@ -8,6 +8,8 @@
     <link href="assets/css/style.css?v=<?= filemtime('assets/css/style.css'); ?>"rel="stylesheet"/>
     <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Old Standard TT' rel='stylesheet'>
 </head>
 <body>
