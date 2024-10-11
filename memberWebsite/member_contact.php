@@ -8,6 +8,8 @@
     <link href="member_assets/css/style.css?v=<?= filemtime('member_assets/css/style.css'); ?>" rel="stylesheet"/>  
     <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
     <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Old Standard TT' rel='stylesheet'>
 </head>
 <body>
@@ -30,7 +32,7 @@
 
     <div class="hero-page contact">
         <div class="two-col imgs">
-            <img style="position: relative; right:240px; width: 702px !important; height:490px;" src="member_assets/img/contact_page.png" alt="Sta Cruz">
+        <img style="position: relative; right:240px; width: 702px !important; height:490px;" src="member_assets/img/contact_page.png" alt="Sta Cruz">
         </div>
         <div class="two-col context" style="position: relative; right: 50px !important; width: 500px;" >
             <h3>CONTACT</h3>

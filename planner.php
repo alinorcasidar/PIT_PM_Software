@@ -290,6 +290,24 @@ input[type="submit"].button:hover {
         
         padding-left: 10px !important;
     }
+    .card {
+        width: 250px !important; 
+        height: 280px !important;
+
+    }
+    input{
+        font-size: 12px !important;
+        height: 40px !important;
+        margin: 0px 0px 10px !important;
+    }
+    .button{
+        font-size: 15px !important;
+        height: 30px !important;
+        padding-top: 5px !important;
+    }
+    .card h2{
+        font-size: 17px !important;
+    }
     
 }
 @media (min-width: 448px) and (max-width: 544px) {
@@ -312,6 +330,19 @@ input[type="submit"].button:hover {
     }
     .reminder-location, .reminder-event, .reminder-date {
         font-size: 14px !important;
+    }
+    .card {
+        width: 300px !important; 
+        position: relative !important;
+
+    }
+    input{
+        font-size: 12px !important;
+    }
+    .button{
+        font-size: 15px !important;
+        height: 40px !important;
+        position: relative;
     }
     
 }
@@ -350,6 +381,12 @@ input[type="submit"].button:hover {
 @media (max-width: 1134px) {
     html, body {
         overflow: auto; /* Allow scrolling */
+        padding-bottom: 200px !important;
+    }
+}
+@media (max-width: 544px) {
+    .hero-page{
+        margin-left: 50px !important;
     }
 }
 </style>

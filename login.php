@@ -39,6 +39,60 @@
             padding-left: 50px;
         }
     }
+        @media (min-width: 672px) and (max-width: 693px) {
+        .card{
+            max-width: 90% !important;
+        }
+        .forgot-password {
+            margin-left: 0px !important;
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+        }
+
+    }
+    @media (min-width: 0px) and (max-width: 672px) {
+        .two-col{
+            margin: 0%!important;
+            padding: 0px !important;
+            margin-top: 30px !important;
+            position: relative;
+            left: 120px;
+        }
+        .card{
+            max-width: 300px!important;
+            max-height: 420px!important;
+        }
+        .forgot-password {
+            margin-left: 0px !important;
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+            padding-bottom: 20px !important;
+        }
+        .card h2{
+        font-size: 20px !important;
+    }
+    .button {
+        padding: 5px !important;
+        font-size: 20px !important;
+        margin-top: 0px !important;
+    }
+    input[type="submit"]{
+        padding: 5px !important;
+        font-size: 20px !important;
+    }
+    .error{
+        padding: 10px !important;
+        font-size: 10px !important;
+    }
+    input{
+        font-size: 12px !important;
+    }
+    .forgot-password{
+        font-size: 14px !important;
+    }
+
+    }
+    
     </style>
 <?php require_once 'component/navbar.php' ?>
 
@@ -58,7 +112,7 @@
                 <form action="controller/login.php" method="post">
                     <input type="text" name="email_address" placeholder="Email Address" >
                     <input type="password" name="password" placeholder="Password">
-                    <input type="submit" class="button" value="Log In" style="font-size: 23px; font-weight: bold; font-family: 'Open Sans';" ;>
+                    <input  type="submit" class="button" value="Log In" style="font-size: 23px; font-weight: bold; font-family: 'Open Sans';" ;>
                     
                 </form>
                 <a class="forgot-password" href="#!" style="margin-left: 110px; font-family:'Blinker'; font-size:18px; color: black; transition: color 0.1s; position: relative; bottom: 10px;" onmousedown="this.style.color='gray';" onmouseup="this.style.color='black';" onmouseleave="this.style.color='black';">Forgot password?</a>

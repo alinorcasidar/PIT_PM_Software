@@ -68,8 +68,7 @@
         display: none;
     }
 
-    label #btn,
-    label #cancel {
+    label #btn {
         position: absolute;
         right: 5px; /* Keep this to align the buttons to the right */
         cursor: pointer;
@@ -89,12 +88,6 @@
         transition: all 0.5s ease;
     }
 
-    label #cancel {
-        opacity: 0;
-        visibility: hidden;
-        right: 5px; /* Ensure cancel button is also aligned to the right */
-    }
-
     #check:checked ~ .sidebar {
         right: 0; /* Change this to show the sidebar from the right */
     }
@@ -103,12 +96,6 @@
         margin-right: 245px;
         opacity: 0;
         visibility: hidden;
-    }
-
-    #check:checked ~ label #cancel {
-        margin-right: 245px;
-        opacity: 1;
-        visibility: visible;
     }
 
     .sidebar > a.active,
@@ -148,7 +135,7 @@
 
 <div class="navbar">
     <div class="title-header" onclick="location='index.php'" style="cursor: pointer; position:relative; left: 50px;">
-        <img src="assets/img/sta_ana_logo.png" alt="Logo">
+        <img class="img-logo" src="assets/img/sta_ana_logo.png" alt="Logo">
         <h2 style="position:relative; top: 8px; left: 10px;" class="hide-on-mobile">
             SANGGUNIANG KABATAAN<br>
             <span>Sta Cruz, Tagologoan, Misamis Oriental</span>
@@ -187,10 +174,7 @@
     <input type="checkbox" id="check">
     <label for="check">
         <i class="fas fa-bars" id="btn"></i>
-        <i class="fas fa-times" id="cancel"></i>
     </label>
-
-
 
         <div class="sidebar">
             <header>Menu</header>
@@ -223,6 +207,11 @@
                             <span>Logout</span>
                         </a>
                 <?php endif; ?>
+                <!-- Close Menu button -->
+                <a href="#" class="close-sidebar" onclick="document.getElementById('check').checked = false;">
+                    <i class="fas fa-times"></i>
+                    <span>Close Menu</span>
+                </a>
         </div>
     </div>
 </div>

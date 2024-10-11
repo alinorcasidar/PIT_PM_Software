@@ -16,6 +16,9 @@
     
     <style>
         /* General styles */
+        body {
+            overflow-x: hidden;
+        }
         .hero-page .two-col.cards.w-100.projects table {
             font-family: 'Open Sans', sans-serif;
             font-size: 15px;
@@ -44,6 +47,17 @@
             border-color: #675031;
             outline: none;
         }
+        .data-profiling-title {
+            font-family: 'Old Standard TT' !important;
+            font-size: 50px !important;
+            color: #675031 !important;
+            text-align: center !important; /* Center the text */
+           
+        }
+
+        
+
+        
 
         /* Responsive table styles */
         @media screen and (max-width: 600px) {
@@ -91,6 +105,60 @@
                 border-bottom: 0;
             }
         }
+        @media screen and (max-width: 1133px) {
+            .table-container {
+            max-width: 1500px !important;
+            overflow-x: auto; /* Enable horizontal scroll inside container if needed */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+        }
+        .data-profiling-title{
+            text-align: center !important;
+        }
+        
+        }
+        @media screen and (max-width: 1340px) {
+            table{
+            margin-left: 80px;
+        }
+        }
+        @media (min-width: 1133px) and (max-width: 2000px) {
+            .data-profiling-title{
+                position: relative !important;
+                left: 170px !important;
+            }
+        }
+        @media (min-width: 600px) and (max-width: 744px) {
+            .data-profiling-title{
+                font-size: 43px !important;
+            }
+        }
+        @media (min-width: 0px) and (max-width: 600px) {
+            .data-profiling-title{
+                font-size: 33px !important;
+            }
+            /* General styles */
+body {
+    overflow-x: hidden; /* Prevent horizontal scroll for the entire page */
+}
+
+.hero-page .two-col.cards.w-100.projects table {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    width: 100%; /* Ensure the table takes up the full container width */
+    border-collapse: collapse;
+    table-layout: fixed; /* Prevent the table from expanding beyond its container */
+    position: relative; /* Ensure it stays within the container */
+    overflow: hidden; /* Prevent scroll bars inside the table */
+}
+
+.table-container {
+    overflow: hidden !important; /* Remove scroll bars in the table container */
+    max-width: 100%; /* Ensure the container doesn't overflow */
+    position: relative;
+}
+
+    }
+
     </style>
 </head>
 <body>
@@ -99,7 +167,7 @@
 
     <div class="hero-page">
         <div class="two-col cards w-100 projects">
-            <h2 class="data-profiling-title" style="font-family: 'Old Standard TT'; font-size: 50px; align-items: center; margin-left: 250px; color: #675031;">DATA PROFILING</h2>
+            <h2 class="data-profiling-title">DATA PROFILING</h2>
 
             <!-- Search Bar -->
             <div class="search-container">

@@ -351,7 +351,7 @@ body {
 
 .projects table th,
 .projects table td {
-    padding: 15px 30px;
+    padding: 15px 25px;
 }
 
 .projects table th {
@@ -449,60 +449,23 @@ body {
     font-style: italic;
 }
 
-.sidenav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--color);
-    color: white;
-    z-index: 99999;
-    padding: 20px;
-    width: 100%;
-    max-width: 300px;;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1) .5s all;
-    transform: translateX(300px);
-}
-
-.sidenav.active {
-    transform: translateX(0);
-}
-
-.sidenav .links {
-    padding-left: 0;
-}
-
-.sidenav ul li {
-    list-style-type: none;
-    display: block;
-    
-}
-
-.sidenav ul li a {
-    display: block;
-    padding: 12px 20px;
-    text-decoration: none;
-    color: white;
-    border-radius: 10px;
-}
-
-.sidenav ul li a:hover {
-    background-color: rgba(0, 0, 0, 0.197);
-}
 
 
-
-@media only screen and (max-width: 1134px) {
+@media(max-width: 1134px) {
     .hide-on-mobile {
         display: none !important;
     }
-
-    .show-on-mobile {
-        display: inline-block !important;
+    .show-on-mobile1 {
+        position: relative;
+        bottom: 52px;
     }
-
     .hero-page .two-col {
         width: 100%;
+    }
+}
+@media (min-width: 1134px) {
+    .show-on-mobile1 {
+        display: none !important;
     }
 }
 
@@ -525,4 +488,11 @@ body {
         align-items: center;
     }
 }
+@media (min-width: 0px) and (max-width: 1134px) {
+    img{
+        position: relative;
+        right: 35px !important;
+    }
+}
+
 

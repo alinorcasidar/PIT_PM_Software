@@ -7,7 +7,9 @@
     <title>Software PIT</title>
     <link href="member_assets/css/style.css?v=<?= filemtime('member_assets/css/style.css'); ?>" rel="stylesheet"/>  
     <link rel="stylesheet" href="member_assets/member_css/bootstrap-icons.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"><link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Old Standard TT' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Blinker' rel='stylesheet'>
 </head>
@@ -37,6 +39,60 @@
             padding-left: 50px;
         }
     }
+        @media (min-width: 672px) and (max-width: 693px) {
+        .card{
+            max-width: 90% !important;
+        }
+        .forgot-password {
+            margin-left: 0px !important;
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+        }
+
+    }
+    @media (min-width: 0px) and (max-width: 672px) {
+        .two-col{
+            margin: 0%!important;
+            padding: 0px !important;
+            margin-top: 30px !important;
+            position: relative;
+            left: 120px;
+        }
+        .card{
+            max-width: 300px!important;
+            max-height: 420px!important;
+        }
+        .forgot-password {
+            margin-left: 0px !important;
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+            padding-bottom: 20px !important;
+        }
+        .card h2{
+        font-size: 20px !important;
+    }
+    .button {
+        padding: 5px !important;
+        font-size: 20px !important;
+        margin-top: 0px !important;
+    }
+    input[type="submit"]{
+        padding: 5px !important;
+        font-size: 20px !important;
+    }
+    .error{
+        padding: 10px !important;
+        font-size: 10px !important;
+    }
+    input{
+        font-size: 12px !important;
+    }
+    .forgot-password{
+        font-size: 14px !important;
+    }
+
+    }
+    
     </style>
 <?php require_once 'member_component/navbar.php'; ?>
 
@@ -56,7 +112,8 @@
                 <form action="member_controller/member_login_db.php" method="post">
                     <input type="text" name="email_address" placeholder="Email Address" >
                     <input type="password" name="password" placeholder="Password">
-                    <input type="submit" class="button" value="Log In" style="font-size: 23px; font-weight: bold; font-family: 'Open Sans';">
+                    <input  type="submit" class="button" value="Log In" style="font-size: 23px; font-weight: bold; font-family: 'Open Sans';" ;>
+                    
                 </form>
                 <a class="forgot-password" href="#!" style="margin-left: 110px; font-family:'Blinker'; font-size:18px; color: black; transition: color 0.1s; position: relative; bottom: 10px;" onmousedown="this.style.color='gray';" onmouseup="this.style.color='black';" onmouseleave="this.style.color='black';">Forgot password?</a>
                 <a style="font-family:'Blinker'; font-weight:bold; font-size:23px; position: relative; bottom: 10px;" href="member_create_account.php" class="button">Create new Account</a>
