@@ -154,11 +154,11 @@
             <a href="member_index.php" class="<?= $current_page == 'member_index.php' ? 'active' : '' ?>">Home</a>
         </li>
     <?php endif; ?>
-        <li class="hide-on-mobile"  style="font-family: 'Open Sans';">
-            <a href="member_data_profiling.php" class="<?= $current_page == 'member_data_profiling.php' ? 'active' : '' ?>">Data Profiling</a>
+    <li class="hide-on-mobile" style="font-family: 'Open Sans';">
+            <a href="member_home.php" class="<?= $current_page == 'member_home.php' ? 'active' : '' ?>">Home</a>
         </li>
-        <li class="hide-on-mobile" style="font-family: 'Open Sans';">
-            <a href="member_planner.php" class="<?= $current_page == 'member_planner.php' ? 'active' : '' ?>">Planner</a>
+        <li class="hide-on-mobile"  style="font-family: 'Open Sans';">
+            <a href="member_about.php" class="<?= $current_page == 'member_about.php' ? 'active' : '' ?>">About</a>
         </li>
         <li class="hide-on-mobile" style="font-family: 'Open Sans';">
             <a href="member_projects.php" class="<?= $current_page == 'member_projects.php' ? 'active' : '' ?>">Projects</a>
@@ -192,13 +192,13 @@
                             <span>Home</span>
                         </a>
                 <?php endif; ?>
-                    <a href="member_data_profiling.php" class="<?= $current_page == 'member_data_profiling.php' ? 'active' : '' ?>">
-                        <i class="fas fa-chart-bar"></i>
-                        <span>Data Profiling</span>
-                    </a>
-                    <a href="member_planner.php" class="<?= $current_page == 'member_planner.php' ? 'active' : '' ?>">
+                <a href="member_home.php" class="<?= $current_page == 'member_home.php' ? 'active' : '' ?>">
                         <i class="fas fa-calendar-alt"></i>
-                        <span>Planner</span>
+                        <span>Home</span>
+                    </a>
+                    <a href="member_about.php" class="<?= $current_page == 'member_about.php' ? 'active' : '' ?>">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>About</span>
                     </a>
                     <a href="member_projects.php" class="<?= $current_page == 'member_projects.php' ? 'active' : '' ?>">
                         <i class="fas fa-project-diagram"></i>

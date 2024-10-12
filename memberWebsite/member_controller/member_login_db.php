@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Redirect to dashboard or home page
             echo "Login successful! Welcome " . $_SESSION['first_name'];
-            header("Location: ../member_planner.php"); //pwede palitan to ng HOMEPAGE
+            header("Location: ../member_home.php"); //pwede palitan to ng HOMEPAGE
             exit();
         } else {
             // Incorrect password

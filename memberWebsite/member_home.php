@@ -14,51 +14,12 @@
     <link href='https://fonts.googleapis.com/css?family=Old+Standard+TT' rel='stylesheet'>
 </head>
 <body>
-<?php require_once 'member_component/navbar.php' ?>
-
-<div class="hero-page">
-    <div class="two-col context">
-        <div class="rem-cont">
-            <div class="reminder-container">
-                <div class="reminder-lists">
-                    <ul>
-                        <?php
-                        // Fetch reminders from the database
-                        $sql = "SELECT id, date, event, location FROM Reminders ORDER BY date DESC";
-                        $result = $conn->query($sql);
-
-                        // Check if there are results and display them
-                        if ($result->num_rows > 0) {
-                            // Output data for each row
-                            while ($row = $result->fetch_assoc()) {
-                                echo "<li class='reminder-item'>";
-                                echo "<div class='reminder-content'>";
-                                echo "<div class='reminder-details'>";
-                                echo "<div class='reminder-date'><strong>Date:</strong> " . date("M d, Y", strtotime($row['date'])) . "</div>";
-                                echo "<div class='reminder-event'><strong>Program:</strong> " . htmlspecialchars($row['event']) . "</div>";
-                                echo "<div class='reminder-location'><strong>Location:</strong> " . htmlspecialchars($row['location']) . "</div>";
-                                echo "</div>";
-                                // Buttons for update and delete
-                                echo "</div>";
-                                echo "</li>";
-                            }
-                        } else {
-                            echo "<li>No reminders found.</li>";
-                        }
-                        $conn->close();
-                        ?>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- CSS for Modern Look -->
 <style>
-.hero-page{
-padding-top: 30px;
-}
+    .hero-page{
+        position: relative;
+        bottom: 50px !important;
+    }
 html, body {
     overflow: hidden; /* Prevent scrolling */
 }
@@ -96,10 +57,26 @@ html, body {
     font-family: 'Open Sans', sans-serif;
     gap: 8px;
 }
-
-
-
-
+.welcome-intro{
+    font-size: 24px !important;
+    color: 444444 !important;
+    font-family: 'Open Sans' !important;
+    font-style: italic !important;
+    width: 550px !important;
+}
+.welcome{
+    max-width: 500px !important;
+    height: 60px !important;
+    background-color: #A7957D;
+}
+.welcome-p{
+    color: white !important;
+    font-family: 'Open Sans' !important;
+    font-style: italic !important;
+    font-size: 36px !important;
+    text-align: center !important;
+    padding-top: 5px !important;
+}
 
 
 /* Media query for responsiveness */
@@ -128,6 +105,15 @@ html, body {
         
         padding-left: 10px !important;
     }
+    .card {
+        width: 250px !important; 
+        height: 280px !important;
+
+    }
+
+    .card h2{
+        font-size: 17px !important;
+    }
     
 }
 @media (min-width: 448px) and (max-width: 544px) {
@@ -143,14 +129,16 @@ html, body {
         width: 90% !important; /* Make the card take 90% width of the container */
         margin-left: 50px !important;
     }
-    .btn-update, .btn-delete{
-        font-size: 10px !important;
-        width: 55px !important;
-        height: 24px !important;
-    }
+
     .reminder-location, .reminder-event, .reminder-date {
         font-size: 14px !important;
     }
+    .card {
+        width: 300px !important; 
+        position: relative !important;
+
+    }
+
     
 }
 @media (min-width: 545px) and (max-width: 768px) {
@@ -188,8 +176,67 @@ html, body {
 @media (max-width: 1134px) {
     html, body {
         overflow: auto; /* Allow scrolling */
+        padding-bottom: 200px !important;
+    }
+}
+@media (max-width: 544px) {
+    .hero-page{
+        margin-left: 50px !important;
     }
 }
 </style>
+
+<?php require_once 'member_component/navbar.php' ?>
+
+<div class="hero-page">
+    <div class="two-col context">
+        <div class="rem-cont">
+            <div class="reminder-container">
+                <div class="reminder-lists">
+                    <ul>
+                        <?php
+                        // Fetch reminders from the database
+                        $sql = "SELECT id, date, event, location FROM Reminders ORDER BY date DESC";
+                        $result = $conn->query($sql);
+
+                        // Check if there are results and display them
+                        if ($result->num_rows > 0) {
+                            // Output data for each row
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<li class='reminder-item'>";
+                                echo "<div class='reminder-content'>";
+                                echo "<div class='reminder-details'>";
+                                echo "<div class='reminder-date'><strong>Date:</strong> " . date("M d, Y", strtotime($row['date'])) . "</div>";
+                                echo "<div class='reminder-event'><strong>Program:</strong> " . htmlspecialchars($row['event']) . "</div>";
+                                echo "<div class='reminder-location'><strong>Location:</strong> " . htmlspecialchars($row['location']) . "</div>";
+                                echo "</div>";
+
+                                echo "</div>";
+                                echo "</li>";
+                            }
+                        } else {
+                            echo "<li>No reminders found.</li>";
+                        }
+                        $conn->close();
+                        ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="two-col context" style="position: relative; right: 50px !important; width: 500px;" >
+                <h3>HOME</h3>
+                <h1 class="introducing" style=" position: relative !important; bottom: 10px !important; font-family: 'Old Standard TT'; font-weight: lighter !important; font-size: 64px; width: 700px;">INTRODUCING</h1>
+                <p class="welcome-intro">Welcome to our website dedicated to youth data profiling in Baranggay Sta. Cruz, Tagoloan, Misamis Oriental! Our platform serves as a comprehensive tool for gathering, organizing, and analyzing crucial data pertaining to the youth demographic in this community.</p>
+                <div class="welcome">
+                    <h2 class="welcome-p">WELCOME!</h2>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 </body>
 </html>

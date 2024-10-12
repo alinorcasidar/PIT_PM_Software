@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($stmt->execute()) {
             // After successful deletion, redirect to the main page
-            header('Location: ../member_planner.php');
+            header('Location: ../member_home.php');
             exit();
         } else {
             echo "Error deleting reminder: " . $conn->error;
