@@ -175,58 +175,63 @@ body {
             </div>
 
             <?php
-            // Query to fetch all users from the Users table
-            $sql = "SELECT id, first_name, last_name, email_address, phone_number, birthday, gender, user_type, isVerified, date_added FROM Users";
-            $result = $conn->query($sql);
+                // Query to fetch all users from the Users table
+                $sql = "SELECT id, first_name, last_name, email_address, phone_number, birthday, gender, user_type, isVerified, date_added FROM Users";
+                $result = $conn->query($sql);
 
-            // Check if there are any users in the table
-            if ($result->num_rows > 0) {
-                // Start building the HTML table
-                echo '<div class="table-container">'; // Add a scrollable container
-                echo '<table border="1" id="userTable">';
-                echo '<thead>';
-                echo '<tr>';
-                echo '<th>ID</th>';
-                echo '<th>First Name</th>';
-                echo '<th>Last Name</th>';
-                echo '<th>Email Address</th>';
-                echo '<th>Phone Number</th>';
-                echo '<th>Birthday</th>';
-                echo '<th>Gender</th>';
-                echo '<th>User Type</th>';
-                echo '<th>Is Verified</th>';
-                echo '<th>Date Added</th>';
-                echo '</tr>';
-                echo '</thead>';
-                echo '<tbody>';
-
-                // Output data of each row
-                while ($row = $result->fetch_assoc()) {
+                // Check if there are any users in the table
+                if ($result->num_rows > 0) {
+                    // Start building the HTML table
+                    echo '<div class="table-container">'; // Add a scrollable container
+                    echo '<table border="1" id="userTable">';
+                    echo '<thead>';
                     echo '<tr>';
-                    echo '<td data-label="ID">' . $row['id'] . '</td>';
-                    echo '<td data-label="First Name">' . $row['first_name'] . '</td>';
-                    echo '<td data-label="Last Name">' . $row['last_name'] . '</td>';
-                    echo '<td data-label="Email Address">' . $row['email_address'] . '</td>';
-                    echo '<td data-label="Phone Number">' . $row['phone_number'] . '</td>';
-                    echo '<td data-label="Birthday">' . $row['birthday'] . '</td>';
-                    echo '<td data-label="Gender">' . $row['gender'] . '</td>';
-                    echo '<td data-label="User Type">' . $row['user_type'] . '</td>';
-                    echo '<td data-label="Is Verified">' . ($row['isVerified'] ? 'Yes' : 'No') . '</td>';
-                    echo '<td data-label="Date Added">' . $row['date_added'] . '</td>';
+                    echo '<th>ID</th>';
+                    echo '<th>First Name</th>';
+                    echo '<th>Last Name</th>';
+                    echo '<th>Email Address</th>';
+                    echo '<th>Phone Number</th>';
+                    echo '<th>Birthday</th>';
+                    echo '<th>Gender</th>';
+                    echo '<th>User Type</th>';
+                    echo '<th>Is Verified</th>';
+                    echo '<th>Date Added</th>';
                     echo '</tr>';
+                    echo '</thead>';
+                    echo '<tbody>';
+
+                    // Output data of each row
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<tr>';
+                        echo '<td data-label="ID">' . $row['id'] . '</td>';
+                        echo '<td data-label="First Name">' . $row['first_name'] . '</td>';
+                        echo '<td data-label="Last Name">' . $row['last_name'] . '</td>';
+                        echo '<td data-label="Email Address">' . $row['email_address'] . '</td>';
+                        echo '<td data-label="Phone Number">' . $row['phone_number'] . '</td>';
+                        echo '<td data-label="Birthday">' . $row['birthday'] . '</td>';
+                        echo '<td data-label="Gender">' . $row['gender'] . '</td>';
+                        echo '<td data-label="User Type">' . $row['user_type'] . '</td>';
+                        // Create a form with an input field for updating the 'isVerified' status
+                        echo '<td data-label="Is Verified">';
+                        echo '<form method="POST" action="controller/update_verification.php">';
+                        echo '<input type="hidden" name="id" value="' . $row['id'] . '">';
+                        echo '<input type="number" name="isVerified" value="' . $row['isVerified'] . '" min="0" max="1" style="border-color: #A7957D !important;">';
+                        echo '<button type="submit" style="font-family: Open Sans !important; background-color:#A7957D !important; margin-top: 5px; color: white;">Update</button>';
+                        echo '</form>';
+                        echo '</td>';
+                        echo '<td data-label="Date Added">' . $row['date_added'] . '</td>';
+                        echo '</tr>';
+                    }
+
+                    echo '</tbody>';
+                    echo '</table>';
+                    echo '</div>'; // Close the scrollable container
+
+                } else {
+                    echo '<p>No users found.</p>';
                 }
+                ?>
 
-                echo '</tbody>';
-                echo '</table>';
-                echo '</div>'; // Close the scrollable container
-
-            } else {
-                echo '<p>No users found.</p>';
-            }
-
-            // Close the connection
-            $conn->close();
-            ?>
         </div>
     </div>
 

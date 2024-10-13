@@ -323,7 +323,7 @@
                     <i  class="fas fa-phone-alt" style="margin-right: 10px; color:black;"></i>
                     <?= $contact ?>
                 </p>
-                <p style="font-size: 25px; font-weight: bold; font-family: 'Open Sans'; color: white; position: relative; bottom: 0px; left: 120px;" class="email_address">
+                <p style="font-size: 25px; font-weight: bold; font-family: 'Open Sans'; color: white; position: relative; bottom:  0px; left: 120px;" class="email_address">
                     <i class="fas fa-envelope" style="margin-right: 10px; color:black;"></i>
                     <?= $email ?>
                 </p>
