@@ -1,4 +1,4 @@
-<?php require_once '../controller/db.php' ?>
+<?php require_once 'member_controller/member_db.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Software PIT</title>
-    <link href="../assets/css/style.css?v=<?= filemtime('../assets/css/style.css'); ?>" rel="stylesheet"/>  
+    <link href="member_assets/css/style.css?v=<?= filemtime('member_assets/css/style.css'); ?>" rel="stylesheet"/>  
     <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
@@ -35,7 +35,7 @@
                     while ($row = $result->fetch_assoc()) {
                         // HTML structure for displaying each event
                         echo '
-                        <div onclick="location=\'project.php?id=' . $row['id'] . '\'" class="grid-container" style="margin-bottom: 20px;  transition: transform 0.3s ease; cursor: pointer; max-width: 300px;" onmouseover="this.style.transform=\'scale(1.1)\'" onmouseout="this.style.transform=\'scale(1)\'">
+                        <div onclick="location=\'member_project.php?id=' . $row['id'] . '\'" class="grid-container" style="margin-bottom: 20px;  transition: transform 0.3s ease; cursor: pointer; max-width: 300px;" onmouseover="this.style.transform=\'scale(1.1)\'" onmouseout="this.style.transform=\'scale(1)\'">
                         <div class="greyed" style="height: 90%;">
                             <img src="' . $row['pictures'] . '" alt="Image" style="width: 300px; height: 200px; object-fit: cover;">
                             <h3 style="font-family: Open Sans; font-size: 24px;">' . $row['event_date'] . '</h3>
@@ -51,13 +51,6 @@
                 // Close the connection
                 $conn->close();
                 ?>
-                <div class="grid-container" style="position: relative; transition: transform 0.3s ease; cursor: pointer;">
-                    <div onclick="location='add_project.php'" style="height: 100%; padding-top: 50px">
-                    <svg style="width:100px;height:200px; color: #444444 !important;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
-                    </svg> 
-                    <h3 style="position:relative; color: #444444; font-family: 'Open Sans';">Add new Project</h3>
-                </div>
             </div>
         </div>
     </div>

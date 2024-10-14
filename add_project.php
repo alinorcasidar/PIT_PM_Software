@@ -23,7 +23,7 @@
         <div class="two-col cards">
         <div class="card">
             <h2>Add Project</h2>
-            <form action="controller/add_event.php" method="post" enctype="multipart/form-data">
+            <form action="memberWebsite/member_controller/member_add_event.php" method="post" enctype="multipart/form-data">
                 <input type="text" name="name" placeholder="Project Name" required>
                 <input type="date" name="event_date" placeholder="Project Date" required>
                 <textarea name="description" placeholder="Project Description" style="height: 300px" required></textarea>

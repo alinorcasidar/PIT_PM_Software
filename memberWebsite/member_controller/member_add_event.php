@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $description = $_POST['description'];
     
     // Handle image upload
-    $target_dir = "../assets/img/"; // Ensure this directory is writable
+    $target_dir = "../member_assets/img/"; // Ensure this directory is writable
     $target_file = $target_dir . basename($_FILES["pictures"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (move_uploaded_file($_FILES["pictures"]["tmp_name"], $target_file)) {
             // Prepare and bind
 
-            $target_dir = "assets/img/"; // Ensure this directory is writable
+            $target_dir = "member_assets/img/"; // Ensure this directory is writable
             $target_file = $target_dir . basename($_FILES["pictures"]["name"]);
     
             $stmt = $conn->prepare("INSERT INTO Events (name, pictures, description, event_date, date_added) VALUES (?, ?, ?, ?, NOW())");
@@ -50,7 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Execute the statement
             if ($stmt->execute()) {
                 echo "New event added successfully.";
-                header('Location: ../member_projects.php?success');
+                header('Location: ../../projects.php?success');
+                exit; // Prevent further code execution
             } else {
                 echo "Error: " . $stmt->error;
             }
