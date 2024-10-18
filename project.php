@@ -13,6 +13,16 @@
     <link href='https://fonts.googleapis.com/css?family=Old Standard TT' rel='stylesheet'>
 </head>
 <body>
+    <style>
+        .hero-page {
+            display: flex !important;
+            justify-content: center !important; /* Center horizontally */
+            align-items: center !important; /* Center vertically */
+            
+            height: 100vh !important; /* Make the hero section full height of the viewport */
+        }
+
+    </style>
 
 <?php require_once 'component/navbar.php' ?>
 
@@ -35,7 +45,7 @@
                 <div class="project-solo-container" >
                     <h1 style="font-family: 'Old Standard TT'; font-size: 50px; align-items: center; color: #675031;" class="center"><?php echo $event['name']; ?></h1>
                     
-                    <img style="height: 400px; position: relative; bottom: 70px;" src="<?php echo $event['pictures']; ?>" alt="Event Image">
+                <img style= "max-height: 500px; position: relative; bottom: 70px;" src="<?php echo 'memberWebsite/' .  $event['pictures']; ?>" alt="Event Image">
 
                     <p style="font-family: 'Open Sans'; font-size: 20px; position: relative; bottom: 70px;"><?php echo $event['description']; ?></p>
                 </div>

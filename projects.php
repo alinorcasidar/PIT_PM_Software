@@ -24,23 +24,31 @@
             <?php 
 
                 // Query to fetch events data from the database
-                $sql = "SELECT id, name, pictures, event_date FROM Events";
+                $sql = "SELECT id, name, pictures,description, event_date FROM Events";
                 $result = $conn->query($sql);
 
                 // Check if any results were returned
                 if ($result->num_rows > 0) {
                     // Loop through each event and display it
-                    while ($row = $result->fetch_assoc()) {
-                        // HTML structure for displaying each event
-                        echo '
-                        <div onclick="location=\'project.php?id=' . $row['id'] . '\'" class="grid-container" style="margin-bottom: 20px;  transition: transform 0.3s ease; cursor: pointer; max-width: 300px;" onmouseover="this.style.transform=\'scale(1.1)\'" onmouseout="this.style.transform=\'scale(1)\'">
+                    // Loop through each event and display it
+                while ($row = $result->fetch_assoc()) {
+                    // HTML structure for displaying each event
+                    echo '
+                    <div class="grid-container">
                         <div class="greyed" style="height: 90%;">
-                            <img src="' . $row['pictures'] . '" alt="Image" style="width: 300px; height: 200px; object-fit: cover;">
+                            <img src="memberWebsite/' . $row['pictures'] . '" alt="Image" style="width: 300px; height: 200px; object-fit: cover;">
                             <h3 style="font-family: Open Sans; font-size: 24px;">' . $row['event_date'] . '</h3>
+                            <div style="display: flex; justify-content: space-around; margin-top: 10px;">
+                                <button class="btn-update" onclick="openUpdateModal(' . $row['id'] . ', \'' . $row['name'] . '\', \'' . $row['pictures'] . '\', \'' . $row['description'] . '\', \'' . $row['event_date'] . '\')">Update</button>
+                                <button class="btn-delete" onclick="openDeleteModal(' . $row['id'] . ')">Delete</button>
+                            </div>
                         </div>
-                        <h3 style="font-family: Open Sans; font-size: 21px; color: #444444; position: relative; bottom: 10px; font-style: italic;">' . $row['name'] . '</h3>
-                        </div>';
-                    }
+                        <a></a>
+                        <h3  onclick="location=\'project.php?id=' . $row['id'] . '\'" style=" cursor: pointer !important; font-family: Open Sans; font-size: 21px; color: #444444; position: relative; bottom: 10px; font-style: italic;">' . $row['name'] . '</h3>
+                    </div>';
+
+                }
+
                 } else {
                     // If no events found
                     echo '<p>No events found.</p>';
@@ -59,11 +67,157 @@
             </div>
         </div>
     </div>
+    <!-- Delete Modal -->
+<div id="deleteModal" class="modal">
+    <div class="modal-content">
+        <p style="font-family: Arial;">Are you sure you want to delete this reminder?</p>
+        <form action="controller/delete_event.php" method="post">
+            <input  type="hidden" id="deleteId" name="id">
+            <button type="submit" class="btn-delete-modal">Yes</button>
+            <button type="button" class="btn-cancel-modal" onclick="closeDeleteModal()">Cancel</button>
+        </form>
+    </div>
+</div>
+
+<!-- Update Modal -->
+<div id="updateModal" class="modal">
+    <div class="modal-content">
+        <h2 style="font-family: 'Open Sans'; text-align: center;">Update Event</h2>
+        <form action="memberWebsite/member_controller/update_event.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" id="updateId" name="id">
+            <input type="hidden" id="existing_pictures" name="existing_pictures"> <!-- Hidden field added -->
+
+            <label for="updateDate">Event Date:</label>
+            <input style="font-family: 'Open Sans';" type="date" id="updateDate" name="event_date" required>
+
+            <label for="updateName">Event Name:</label>
+            <input style="font-family: 'Open Sans';" type="text" id="updateName" name="name" placeholder="Event Name" required>
+
+            <label for="updateDescription">Description:</label>
+            <input style="font-family: 'Open Sans';" type="text" id="updateDescription" name="description" placeholder="Event Description" required>
+
+            <label for="existingPicture">Current Picture:</label>
+            <img id="existingPicture" src="" alt="Event Picture" style="max-width: 100px; display: block; margin-bottom: 10px;">
+
+            <label for="updatePicture">Upload New Picture:</label>
+            <input style="font-family: 'Open Sans';" type="file" id="updatePicture" name="pictures" accept="image/*">
+
+            <button type="submit" class="btn-update-modal">Update</button>
+            <button type="button" class="btn-cancel-modal" onclick="closeUpdateModal()">Cancel</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- JavaScript for Modal Handling -->
+<script>
+    function openDeleteModal(id) {
+    document.getElementById('deleteId').value = id;
+    document.getElementById('deleteModal').style.display = 'block';
+}    
+
+function closeDeleteModal() {
+    document.getElementById('deleteModal').style.display = 'none';
+}
+function openUpdateModal(id, name, pictures, description, event_date) {
+    document.getElementById('updateId').value = id;
+    document.getElementById('updateDate').value = event_date;
+    document.getElementById('updateName').value = name;
+    document.getElementById('updateDescription').value = description;
+    
+    // Set the existing picture URL if available
+    document.getElementById('existingPicture').src = pictures ? pictures : 'default-placeholder.png';
+    
+    document.getElementById('updateModal').style.display = 'block';
+}
+
+function closeUpdateModal() {
+    document.getElementById('updateModal').style.display = 'none';
+}
+</script>
 
     <style>
+        /* Button Design */
+        .btn-delete, .btn-update, .btn-cancel, .btn-cancel-modal, .btn-update-modal, .btn-delete-modal {
+            padding: 6px 12px;
+            font-size: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            width: 80px;
+            
+        }
+
+        .btn-delete,.btn-delete-modal, .btn-cancel-modal {
+            background-color: #dc3545;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn-update, .btn-update-modal {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn-delete:hover, .btn-delete-modal:hover {
+            background-color: #c82333;
+        }
+
+        .btn-update:hover, .btn-update-modal:hover {
+            background-color: #218838;
+        }
+
+        .btn-cancel, .btn-cancel-modal {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .btn-cancel, .btn-cancel-modal:hover {
+            background-color: #5a6268;
+
+        }
 
 
-        
+        input, button {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"].button {
+            background-color: #007bff;
+            color: white;
+        }
+
+        input[type="submit"].button:hover {
+            background-color: #0056b3;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            width: 300px;
+        }
+
+        .modal-content {
+            text-align: center;
+        }
 
 @media (min-width: 1px) and (max-width: 421px) {
             .project-grid {

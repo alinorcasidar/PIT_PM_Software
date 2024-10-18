@@ -13,6 +13,16 @@
     <link href='https://fonts.googleapis.com/css?family=Old Standard TT' rel='stylesheet'>
 </head>
 <body>
+    <style>
+        .hero-page {
+            display: flex !important;
+            justify-content: center !important; /* Center horizontally */
+            align-items: center !important; /* Center vertically */
+            
+            height: 100vh !important; /* Make the hero section full height of the viewport */
+        }
+
+    </style>
 
 <?php require_once 'member_component/navbar.php' ?>
 

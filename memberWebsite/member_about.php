@@ -14,6 +14,9 @@
 </head>
 <body>
 <style>
+    html, body {
+        overflow-x: hidden; /* Disable horizontal scrolling */
+    }
     .logo {
         display: flex; /* Use flexbox for inline layout */
         justify-content: center; /* Center items horizontally */
@@ -38,8 +41,24 @@
         max-width: 250px !important;
         height: auto !important; /* Maintain aspect ratio */
     }
-    .context h1{
+    .mission-vision-text{
         font-size: 55px !important;
+        margin: auto !important;
+        text-align: center !important;
+        color: #675031  !important;
+        font-family: 'Old Standard TT' !important;
+        font-weight: lighter !important;
+    }
+    .about-text{
+        font-size: 30px !important;
+        margin: auto !important;
+        text-align: center !important;
+        color: #737373  !important;
+        font-family: 'Open Sans' !important;
+        font-weight: lighter !important;
+        
+        margin-right: 380px !important;
+        padding-top: 20px !important;
     }
     .context h2{
         font-size: 40px !important;
@@ -65,7 +84,7 @@
     }
     .context-mission{
         position: relative;
-        top: 210px !important;
+        top: 90px !important;
     }
     .context-mission h1{
         font-size: 55px !important;
@@ -92,6 +111,9 @@
         font-style: italic !important;
         font-family: 'Open Sans' !important;
     }
+    .context{
+        padding-left: 50px !important;
+    }
 </style>
 
 
@@ -101,11 +123,11 @@
             <img class="img-2" src="member_assets/img/tagoloan.png" alt="">
             <img class="img-3" src="member_assets/img/stana.png" alt="logo">
         </div>
+        <h3 class="about-text">ABOUT</h3>
+        <h1 class="mission-vision-text">VISION & MISSION</h1>
     <div class="hero-page">
         <div class="two-col context">
-        <h3>ABOUT</h3>
-            <h1>VISSION & MISSION</h1>
-            <h2>VISSION</h2>
+            <h2>VISION</h2>
             <p>The Sangguniang Kabataan envisions active, supportive and participative role in all government efforts, programs, projects and other initiatives that ultimately lead the SK and other youth organizations to achieve truly free, just, democratic, progressive, effective and most of all, God-abiding and morally upright sector in the Philippine society.</p>
         </div>
         <div class="two-col context-mission">

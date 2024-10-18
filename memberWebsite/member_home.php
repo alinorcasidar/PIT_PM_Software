@@ -20,9 +20,9 @@
         position: relative;
         bottom: 50px !important;
     }
-html, body {
-    overflow: hidden; /* Prevent scrolling */
-}
+    html, body {
+        overflow: hidden; /* Prevent scrolling */
+    }
 
 /* Reminder Item Design */
 .reminder-item {
@@ -35,6 +35,10 @@ html, body {
     justify-content: space-between;
     align-items: center;
     
+}
+.context {
+    position:  relative !important;
+    top: 30px !important;  
 }
  .reminder-location, .reminder-event, .reminder-date {
     padding-left: 15px !important;
@@ -76,6 +80,25 @@ html, body {
     font-size: 36px !important;
     text-align: center !important;
     padding-top: 5px !important;
+}
+.introducing{
+    font-family: 'Old Standard TT' !important;
+    font-weight: lighter !important;
+    font-size: 64px !important;
+    color: #675031 !important;
+    position: relative !important;
+    top: 35px !important;
+
+}
+.content h3{
+    font-family: 'Open Sans' !important;
+    font-style: italic !important;
+    font-size: 28px !important;
+    color: #737373 !important;
+
+    position: relative !important;
+    top: 78px !important;
+    font-weight: lighter !important;
 }
 
 
@@ -154,36 +177,172 @@ html, body {
         width: 90% !important; /* Make the card take 90% width of the container */
         margin-left: 150px !important;
     }
-}@media (min-width: 917px) and (max-width: 1134px) {
-    .card {
-        width: 90% !important; /* Make the card take 90% width of the container */
-        margin-left: 400px !important;
-    }
-    .rem-cont {
-        width: 90% !important; /* Make the card take 90% width of the container */
-        margin-left: 350px !important;
-    }
-}@media (min-width: 768px) and (max-width: 917px) {
-    .card {
-        width: 90% !important; /* Make the card take 90% width of the container */
-        margin-left: 300px !important;
-    }
-    .rem-cont {
-        width: 90% !important; /* Make the card take 90% width of the container */
-        margin-left: 250px !important;
-    }
-}
-@media (max-width: 1134px) {
+}@media (max-width: 1134px) {
+    
+    
+    @media (max-width: 1134px) {
     html, body {
         overflow: auto; /* Allow scrolling */
         padding-bottom: 200px !important;
     }
+    .card {
+        width: 90% !important; /* Make the card take 90% width of the container */
+    }
+    .rem-cont {
+        width: 90% !important; /* Make the card take 90% width of the container */
+    }
+
+    .content {
+        margin: 0 auto !important; /* Center the content div */
+        width: 90% !important; /* Optional: Make it responsive */
+        max-width: 1134px  !important; /* Limit the maximum width */
+        position: relative !important;
+        left: 220px !important;
+        text-align: center !important;
+        position: relative !important;
+        bottom: 50px !important;
+    }
+
+    }
+    .introducing{
+        position: relative;
+        right: 190px !important;
+        width: 90% !important; /* Optional: Make it responsive */
+        max-width: 1134px  !important; /* Limit the maximum width */
+
+    }
+    .content h3 {
+        text-align: center;      /* Center the text inside the h3 */
+        font-size: 28px !important; /* Ensure the font size is responsive */
+        position: relative !important;
+        right: 400px !important;
+        max-width: 800px !important;
+        margin: auto !important;
+    }
+    .welcome{
+        max-width: 550px !important;
+        margin-right: 30px !important;
+        text-align: center !important;
+        margin: auto !important;
+        position: relative !important;
+        right: 200px !important;
+        
+    }
+    .content p{
+        width: 100% !important; /* Optional: Make it responsive */
+        max-width: 600px  !important; /* Limit the maximum width */
+        text-align: center !important;
+        margin: auto !important;
+        position: relative !important;
+        right: 200px !important;
+        
+    }
+    .context{
+        margin: auto !important;
+        align-items: center !important;
+        padding-left: 0px !important;
+        position: relative !important;
+        left: 20px !important;
+    }
+    .rem-cont{
+        margin: 0 auto !important;
+    }
+
+
 }
-@media (max-width: 544px) {
-    .hero-page{
-        margin-left: 50px !important;
+@media screen and (max-width: 634px) {
+    .introducing{
+        font-size: 55px !important;
+    }
+    .content h3{
+        font-size: 23px !important;
+        padding-left: 75px !important;
+
+    }
+    .content p{
+        font-size: 21px !important;
+    }
+    .welcome-p{
+        font-size: 25px !important;
+        position: relative !important;
+        top: 7px !important;
     }
 }
+@media screen and (max-width: 634px) {
+    .introducing{
+        font-size: 45px !important;
+    }
+    .content h3{
+        font-size: 17px !important;
+        padding-left: 105px !important;
+        padding-bottom: 5px !important;
+
+    }
+    .content p{
+        font-size: 17px !important;
+    }
+    .welcome-p{
+        font-size: 22px !important;
+        position: relative !important;
+        top: 4px !important;
+    }
+    .welcome{
+        max-height: 50px !important;
+    }
+}
+@media screen and (max-width: 454px) {
+    .introducing{
+        font-size: 35px !important;
+        padding-bottom: 10px !important;
+    }
+    .content h3{
+        font-size: 14px !important;
+        padding-left: 185px !important;
+        padding-bottom: 20px !important;
+
+    }
+    .content p{
+        font-size: 14px !important;
+    }
+    .welcome-p{
+        font-size: 15px !important;
+        position: relative !important;
+        top: 2px !important;
+    }
+    .welcome{
+        max-height: 35px !important;
+    }
+    .content{
+        padding-right: 40px !important;
+    }
+}
+@media screen and (max-width: 375px) {
+    .introducing{
+        font-size: 25px !important;
+        padding-bottom: 15px !important;
+    }
+    .content h3{
+        font-size: 11px !important;
+        padding-left: 245px !important;
+        padding-bottom: 25px !important;
+
+    }
+    .content p{
+        font-size: 12px !important;
+    }
+    .welcome-p{
+        font-size: 11px !important;
+        position: relative !important;
+        top: 1px !important;
+    }
+    .welcome{
+        max-height: 27px !important;
+    }
+    .content{
+        padding-right: 40px !important;
+    }
+}
+
 </style>
 
 <?php require_once 'member_component/navbar.php' ?>
@@ -224,12 +383,12 @@ html, body {
             </div>
         </div>
     </div>
-        <div class="two-col context" style="position: relative; right: 50px !important; width: 500px;" >
+    <div class="two-col content" style="position: relative; right: 50px !important; width: 500px;" >
                 <h3>HOME</h3>
                 <h1 class="introducing" style=" position: relative !important; bottom: 10px !important; font-family: 'Old Standard TT'; font-weight: lighter !important; font-size: 64px; width: 700px;">INTRODUCING</h1>
-                <p class="welcome-intro">Welcome to our website dedicated to youth data profiling in Baranggay Sta. Cruz, Tagoloan, Misamis Oriental! Our platform serves as a comprehensive tool for gathering, organizing, and analyzing crucial data pertaining to the youth demographic in this community.</p>
+                <p style="font-style: normal !important; " class="welcome-intro">Welcome to our website dedicated to youth data profiling in Baranggay Sta. Cruz, Tagoloan, Misamis Oriental! Our platform serves as a comprehensive tool for gathering, organizing, and analyzing crucial data pertaining to the youth demographic in this community.</p>
                 <div class="welcome">
-                    <h2 class="welcome-p">WELCOME!</h2>
+                <h2 class="welcome-p">WELCOME!</h2>
                 </div>
         </div>
     </div>

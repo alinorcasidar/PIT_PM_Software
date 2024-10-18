@@ -63,6 +63,7 @@
                 margin-left: 90px !important;
             }
 
+
         }
         @media (min-width: 1134px) and (max-width: 1339px) {
             .hero-page {
@@ -98,6 +99,34 @@
             }
             html, body {
                 overflow: auto !important; /* Allow scrolling */
+            }
+            .contact_p {
+                width: 170px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                padding: 5px !important;    
+                margin-left: 50px !important;
+            }
+            .contact-number {
+                max-width: 280px !important;
+                padding: 10px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                margin-top: 10px !important;
+            }
+            .email_address {
+                max-width: 500px !important;
+                padding: 10px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                margin-top: 10px !important;
+            }
+            .contact-information {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                margin-top: 20px !important;
+                margin-right: 180px !important;
             }
         }
 
@@ -140,6 +169,7 @@
             html, body {
                 overflow: auto !important; /* Allow scrolling */
             }
+            
         }
         @media (min-width: 0px) and (max-width: 589px) {
             .context h1{
@@ -149,6 +179,36 @@
                 font-size: 25px !important;
                 margin-left: 90px !important;
                 padding-bottom: 10px !important;
+            }
+        }
+        @media (min-width: 0px) and (max-width: 1334px) {
+            .contact_p {
+                width: 170px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                padding: 5px !important;    
+                margin-left: 50px !important;
+            }
+            .contact-number {
+                max-width: 280px !important;
+                padding: 10px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                margin-top: 10px !important;
+            }
+            .email_address {
+                max-width: 500px !important;
+                padding: 10px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                margin-top: 10px !important;
+            }
+            .contact-information {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                margin-top: 20px !important;
+                margin-right: 180px !important;
             }
         }
         @media (min-width: 493px) and (max-width: 589px) {
@@ -167,6 +227,40 @@
             .imgs img{
                 width: 300px !important;
                 height: 300px !important;
+            }
+            
+            /* Style for the contact information */
+            p{
+                font-size: 15px !important;
+            }
+            .contact_p {
+                max-width: 100px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                padding: 5px !important;    
+                margin-left: 50px !important;
+            }
+            .contact-number {
+                max-width: 280px !important;
+                padding: 10px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                margin-top: 5px !important;
+            }
+            .email_address {
+                max-width: 500px !important;
+                padding: 10px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                margin-top: 5px !important;
+            }
+            .contact-information {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                position: relative !important;
+                top: 20px !important;
+                margin-right: 210px !important;
             }
         }
         @media (min-width: 441px) and (max-width: 493px) {
@@ -207,6 +301,40 @@
                 right: 30px !important;
                 margin-bottom: 0px !important;
             }
+
+            /* Style for the contact information */
+            p{
+                font-size: 15px !important;
+            }
+            .contact_p {
+                max-width: 100px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                padding: 5px !important;    
+                margin-left: 50px !important;
+            }
+            .contact-number {
+                max-width: 280px !important;
+                padding: 10px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                margin-top: 5px !important;
+            }
+            .email_address {
+                max-width: 500px !important;
+                padding: 10px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                margin-top: 5px !important;
+            }
+            .contact-information {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                position: relative !important;
+                top: 10px !important;
+                margin-right: 260px !important;
+            }
             
         }
         @media (min-width: 395px) and (max-width: 441px) {
@@ -246,6 +374,40 @@
                 position: relative !important;
                 right: 40px !important;
                 margin-bottom: 0px !important;
+            }
+            
+            /* Style for the contact information */
+            p{
+                font-size: 15px !important;
+            }
+            .contact_p {
+                max-width: 100px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                padding: 5px !important;    
+                margin-left: 50px !important;
+            }
+            .contact-number {
+                max-width: 280px !important;
+                padding: 10px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                margin-top: 5px !important;
+            }
+            .email_address {
+                max-width: 500px !important;
+                padding: 10px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                margin-top: 5px !important;
+            }
+            .contact-information {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                position: relative !important;
+                top: 5px !important;
+                margin-right: 300px !important;
             }
             
         }
@@ -291,6 +453,40 @@
                 margin-bottom: 0px !important;
             }
             
+            /* Style for the contact information */
+            p{
+                font-size: 15px !important;
+            }
+            .contact_p {
+                max-width: 100px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                padding: 5px !important;    
+                margin-left: 50px !important;
+            }
+            .contact-number {
+                max-width: 280px !important;
+                padding: 10px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                margin-top: 5px !important;
+            }
+            .email_address {
+                max-width: 500px !important;
+                padding: 10px !important;
+                background-color: #A7957D;
+                border-radius: 10px !important;
+                margin-top: 5px !important;
+            }
+            .contact-information {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                position: relative !important;
+                top: 10px !important;
+                margin-right: 350px !important;
+            }
+            
         }
            
     </style>
@@ -318,15 +514,18 @@
                         $email = 'No email address available';
                     }
                 ?>
-                <p style="font-size: 25px; font-weight: bold; font-family: 'Open Sans'; color: white; position: relative; top: 15px; left: 90px;">Contact:</p>
-                <p style="font-size: 25px; font-weight: bold; font-family: 'Open Sans'; color: white; position: relative; top: 10px; left: 120px;" class="contact-number">
-                    <i  class="fas fa-phone-alt" style="margin-right: 10px; color:black;"></i>
-                    <?= $contact ?>
-                </p>
-                <p style="font-size: 25px; font-weight: bold; font-family: 'Open Sans'; color: white; position: relative; bottom:  0px; left: 120px;" class="email_address">
-                    <i class="fas fa-envelope" style="margin-right: 10px; color:black;"></i>
-                    <?= $email ?>
-                </p>
+                <div class="contact-information">
+                    <p class="contact_p" style="font-size: 25px; font-weight: bold; font-family: 'Open Sans'; color: white; position: relative; top: 15px; left: 90px;">Contact:</p>
+                    <p style="font-size: 25px; font-weight: bold; font-family: 'Open Sans'; color: white; position: relative; top: 10px; left: 120px;" class="contact-number">
+                        <i  class="fas fa-phone-alt" style="margin-right: 10px; color:black;"></i>
+                        <?= $contact ?>
+                    </p>
+                    <p style="font-size: 25px; font-weight: bold; font-family: 'Open Sans'; color: white; position: relative; bottom:  0px; left: 120px;" class="email_address">
+                        <i class="fas fa-envelope" style="margin-right: 10px; color:black;"></i>
+                        <?= $email ?>
+                    </p>
+                </div>
+
 
             </div>
         </div>

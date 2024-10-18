@@ -188,7 +188,7 @@ html, body {
     
 }
 
-.btn-delete,.btn-delete-modal, .btn-cancel-modal {
+.btn-delete, .btn-delete-modal {
     background-color: #dc3545;
     color: white;
     cursor: pointer;
