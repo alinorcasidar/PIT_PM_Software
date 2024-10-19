@@ -16,6 +16,17 @@
         html, body {
             overflow: hidden; /* Prevent scrolling */
         }
+        .error-message {
+            color: red;             /* Text color */
+            font-size: 14px;       /* Smaller font size */
+            line-height: 0px !important;
+            position: relative !important;
+            bottom: 8px !important;
+            left: 10px !important;
+            font-family: 'Open Sans' !important;
+        }
+
+        
         @media (max-width: 585px) {
             .fname, .lname, .bday,.gender{
                 width: 95px !important;
@@ -182,14 +193,21 @@
             <h1>TAGOLOAN</h1>
         </div>
         <div class="two-col cards" >
-            <div style="max-width: 460px !important; max-height: 530px !important" class="card">
+            <div style="max-width: 460px !important; max-height: 550px !important" class="card">
             <form action="member_controller/member_register.php" method="post">
                     <h2 class="create-title" style="text-align:center; font-family: 'Open Sans';">CREATE ACCOUNT</h2>
                     <!-- First Name -->
                     <input class="fname" style="max-width: 200px !important; display: inline !important" type="text" id="first_name" name="first_name" placeholder="First Name" required><input class="lname" style="max-width: 200px !important; display: inline !important; margin-left: 14px;" type="text" id="last_name" name="last_name" placeholder="Last Name" required>
                     <div style="position: relative; bottom: 20px;">
-                        <!-- Email Address -->
-                        <input class="email" type="email" id="email_address" name="email_address" placeholder="Email Address" required>
+                        <div class="form-group">
+                            <!-- Email Address -->
+                            <input class="email" type="email" id="email_address" name="email_address" placeholder="Email Address" required>
+                            <?php if(isset($_GET['error']) && !empty($_GET['error'])): ?>
+                                <div class="error-message">
+                                    <?= htmlspecialchars($_GET['error']); ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
                         <!-- Phone Number -->
                         <input class="phone" type="tel" id="phone_number" name="phone_number" placeholder="Phone Number">
 

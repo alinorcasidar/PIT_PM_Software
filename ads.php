@@ -11,77 +11,77 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Orienta' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Old+Standard+TT' rel='stylesheet'>
 </head>
 <body>
 <?php require_once 'component/navbar.php' ?>
 
-<div class="hero-page">
-    <div class="two-col context">
-        <div class="rem-cont">
-            <div class="reminder-container">
-                <div class="reminder-lists">
-                    <ul>
-                        <?php
-                        // Fetch reminders from the database
-                        $sql = "SELECT id, date, event, location FROM Reminders ORDER BY date DESC";
-                        $result = $conn->query($sql);
-
-                        // Check if there are results and display them
-                        if ($result->num_rows > 0) {
-                            // Output data for each row
-                            while ($row = $result->fetch_assoc()) {
-                                echo "<li class='reminder-item'>";
-                                echo "<div class='reminder-content'>";
-                                echo "<div class='reminder-details'>";
-                                echo "<div class='reminder-date'><strong>Date:</strong> " . date("M d, Y", strtotime($row['date'])) . "</div>";
-                                echo "<div class='reminder-event'><strong>Program:</strong> " . htmlspecialchars($row['event']) . "</div>";
-                                echo "<div class='reminder-location'><strong>Location:</strong> " . htmlspecialchars($row['location']) . "</div>";
-
-                                echo "</div>";
-                                // Buttons for update and delete
-                                echo "<div class='reminder-actions'>";
-                                echo "<button class='btn-update' onclick=\"openUpdateModal({$row['id']}, '{$row['date']}', '{$row['event']}', '{$row['location']}')\">Update</button>";
-                                echo "<button class='btn-delete' onclick=\"openDeleteModal({$row['id']})\">Delete</button>";
-                                echo "</div>";
-                                echo "</div>";
-                                echo "</li>";
-                            }
-                        } else {
-                            echo "<li>No reminders found.</li>";
-                        }
-                        $conn->close();
-                        ?>
-                    </ul>
-                </div>
+<div class="hero-page" style="position: relative; left: 300px !important; position: relative; bottom: 20px;">
+    <div class="cards">
+        <div class="card" style="width: 390px !important; max-height: 500px !important; margin-right: 30px;">
+                <h2 style="font-family: 'Orienta'; font-weight: lighter; font-size: 20px;">Free Website</h2>
+                <h1 style="font-family: 'Orienta'; font-weight: lighter; font-size: 30px; line-height: 8px; display: inline !important; ">P 0.00</h1><p style="font-family: 'Orienta'; font-weight: lighter; font-size: 12px; line-height: 8px; display: inline-block;">/month</p>
+                <hr style="border: 1.5px solid #C9C9C9;">
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px; "><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Data Profiling</p>
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px; position: relative; bottom: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Add Projects</p>
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px; position: relative; bottom: 20px; color: #9B9B9B;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Message / Email</p>
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px; position: relative; bottom: 30px; color: #9B9B9B;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Print Data</p>
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px; position: relative; bottom: 40px; color: #9B9B9B;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Costum Design</p>
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px;  position: relative; bottom: 50px; color: #9B9B9B;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Free Domain / Host</p>
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px; position: relative; bottom: 60px; color: #9B9B9B;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Enhanced Security</p>
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px; position: relative; bottom: 70px; color: #9B9B9B;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Priority Customer Support</p>
+                <a class="button" href="data_profiling.php" style="position: relative; bottom: 70px; ">Get Free</a>
             </div>
-        </div>
     </div>
-    <div class="three-col cards">
-        <div class="card" style="max-width: 290px !important;">
-            <h2 style="font-family: 'Open Sans'; text-align: center;">Add Reminders</h2>
-            <form action="controller/add_reminder.php" method="post">
-                <input type="date" name="date" placeholder="Reminder Date" required>
-                <input type="text" name="event" placeholder="Event Description" required>
-                <input type="text" name="location" placeholder="Location" required>
-                <input type="submit" class="button" value="Add Reminder">
-            </form>
-        </div>
-        
-    </div>
-
     <div class="text-email">
-    <div class="three-col cards">
-        <div class="card-text" style="margin-left: 10px !important; max-height: 370px !important; line-height: 20px !important; position: relative !important;">
-            <h2 style="font-family: 'Open Sans'; text-align: center; position: relative; bottom: 10px;" >Text / Email </h2>
-            <form action="ads.php" method="post">
-                <input type="date" name="date-text" placeholder="Reminder Date" required style="position: relative; bottom: 15px;">
-                <input type="text" name="event-text" placeholder="Event Description" required style="position: relative; bottom: 15px;">
-                <input type="text" name="location-text" placeholder="Location" required style="position: relative; bottom: 15px;">
-                <input type="text" name="message-text" placeholder="Message" required style="position: relative; bottom: 15px;">
-                <input type="submit" class="btn-reminder" value="Send Reminder" style="position: relative; bottom: 15px; padding: 8px !important; overflow-x: auto !important;  white-space: nowrap !important;">
-            </form>
-        </div>
+    <div class="cards">
+    <div class="card" style="width: 390px !important; max-height: 500px !important; margin-left: 30px !important;">
+                <h2 style="font-family: 'Orienta'; font-weight: lighter; font-size: 20px;">Premium Website</h2>
+                <h1 style="font-family: 'Orienta'; font-weight: lighter; font-size: 30px; line-height: 8px; display: inline !important; ">P 9,999.90</h1><p style="font-family: 'Orienta'; font-weight: lighter; font-size: 12px; line-height: 8px; display: inline-block;">/month</p>
+                <hr style="border: 1.5px solid #C9C9C9;">
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px; "><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Data Profiling</p>
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px; position: relative; bottom: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Add Projects</p>
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px; position: relative; bottom: 20px;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Message / Email</p>
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px; position: relative; bottom: 30px;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Print Data</p>
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px; position: relative; bottom: 40px;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Costum Design</p>
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px;  position: relative; bottom: 50px;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Free Domain / Host</p>
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px; position: relative; bottom: 60px;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Enhanced Security</p>
+                <p style="font-family: 'Orienta'; font-weight: lighter; font-size: 17px; line-height: 0px; position: relative; bottom: 70px;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/>
+                </svg>Priority Customer Support</p>
+                <a class="button" href="ads.php" style="position: relative; bottom: 70px; ">Get Premium</a>
+            </div>
         
     </div>
     </div>
@@ -91,7 +91,7 @@
 <!-- Delete Modal -->
 <div id="deleteModal" class="modal">
     <div class="modal-content">
-        <p style="font-family: Arial;">Are you sure you want to delete this reminder?</p>
+        <p style="font-family: 'Open Sans'; text-align: center;" >Are you sure you want to delete this reminder?</p>
         <form action="controller/delete_reminder.php" method="post">
             <input  type="hidden" id="deleteId" name="id">
             <button type="submit" class="btn-delete-modal">Yes</button>

@@ -6,7 +6,7 @@ session_start();
 $public_pages = ['member_index.php', 'member_login.php', 'member_create_account.php']; 
 
 // Define the pages that require authentication
-$protected_pages = ['member_about.php', 'member_home.php', 'member_projects.php'];
+$protected_pages = ['member_about.php', 'member_home.php', 'member_projects.php', 'member_contact.php'];
 
 // Get the current page
 $current_page = basename($_SERVER['PHP_SELF']);

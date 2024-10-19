@@ -1,35 +1,55 @@
 <?php
-require_once 'member_db.php';
+require_once 'member_db.php'; // Ensure this points correctly to your db.php
 
-
-// Check if the form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form inputs
-    $first_name = $conn->real_escape_string($_POST['first_name']);
-    $last_name = $conn->real_escape_string($_POST['last_name']);
-    $email_address = $conn->real_escape_string($_POST['email_address']);
-    $phone_number = $conn->real_escape_string($_POST['phone_number']);
-    $password = password_hash($conn->real_escape_string($_POST['password']), PASSWORD_DEFAULT); // Hash password
-    $birthday = $conn->real_escape_string($_POST['birthday']);
-    $gender = $conn->real_escape_string($_POST['gender']);
-
+    // Sanitize and validate user inputs
+    $first_name = trim($_POST['first_name']);
+    $last_name = trim($_POST['last_name']);
+    $email_address = trim($_POST['email_address']);
+    $phone_number = trim($_POST['phone_number']);
+    $password = trim($_POST['password']);
+    $birthday = $_POST['birthday'];
+    $gender = $_POST['gender'];
     // Set default values for user_type and isVerified
-    $user_type = 'member'; // Set user type to member
-    $isVerified = 1; // Set isVerified to true (1)
+    $user_type = 'authorized'; // Set user type to authorized
+    $isVerified = 0; 
 
-    // SQL query to insert data into Users table
-    $sql = "INSERT INTO Users (first_name, last_name, email_address, phone_number, password, birthday, gender, user_type, isVerified, date_added) 
-            VALUES ('$first_name', '$last_name', '$email_address', '$phone_number', '$password', '$birthday', '$gender', '$user_type', '$isVerified', NOW())";
+    // Check if email already exists
+    $checkEmailQuery = "SELECT email_address FROM Users WHERE email_address = ?";
+    $stmt = $conn->prepare($checkEmailQuery);
+    $stmt->bind_param("s", $email_address);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    // Execute query and check for success
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-        header('Location: ../member_index.php?success');
+    if ($result->num_rows > 0) {
+        // Email already exists, redirect with error
+        header("Location: ../member_create_account.php?error=" . urlencode("Email already exists."));
+        exit();
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-}
+        // Proceed with registration
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT); // Hash the password
 
-// Close the connection
-$conn->close();
+        $insertQuery = "INSERT INTO Users (first_name, last_name, email_address, phone_number, password, birthday, gender) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($insertQuery);
+        $stmt->bind_param("sssssss", $first_name, $last_name, $email_address, $phone_number, $hashed_password, $birthday, $gender);
+
+        if ($stmt->execute()) {
+            // Registration successful, redirect to a success page
+            header('Location: ../member_login.php?success');
+            exit();
+        } else {
+            // Registration failed, redirect with error
+            header("Location: ../member_create_account.php?error=" . urlencode("Registration failed. Please try again."));
+            exit();
+        }
+    }
+
+    // Close statement and connection
+    $stmt->close();
+    $conn->close();
+} else {
+    // Not a POST request, redirect to registration page
+    header("Location: ../registration_page.php");
+    exit();
+}
 ?>
