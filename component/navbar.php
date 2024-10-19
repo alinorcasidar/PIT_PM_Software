@@ -128,6 +128,20 @@
         color: #d6adff;
         margin: 0;
     }
+    @media (max-width: 1111px) {
+        .hide-on-mobile2{
+            font-size: 20px !important;
+        }
+        .img-logo2{
+            width: 50px !important;
+            height: 50px !important;
+        }
+    }
+    @media (max-width: 554px) {
+        .hide-on-mobile2{
+            display: none !important;
+        }
+    }
 
 </style>
 

@@ -30,24 +30,23 @@
                 // Check if any results were returned
                 if ($result->num_rows > 0) {
                     // Loop through each event and display it
-                    // Loop through each event and display it
-                while ($row = $result->fetch_assoc()) {
-                    // HTML structure for displaying each event
-                    echo '
-                    <div class="grid-container">
-                        <div class="greyed" style="height: 90%;">
-                            <img src="memberWebsite/' . $row['pictures'] . '" alt="Image" style="width: 300px; height: 200px; object-fit: cover;">
-                            <h3 style="font-family: Open Sans; font-size: 24px;">' . $row['event_date'] . '</h3>
-                            <div style="display: flex; justify-content: space-around; margin-top: 10px;">
-                                <button class="btn-update" onclick="openUpdateModal(' . $row['id'] . ', \'' . $row['name'] . '\', \'' . $row['pictures'] . '\', \'' . $row['description'] . '\', \'' . $row['event_date'] . '\')">Update</button>
-                                <button class="btn-delete" onclick="openDeleteModal(' . $row['id'] . ')">Delete</button>
+                    // Loop through eaAch event and display it
+                    while ($row = $result->fetch_assoc()) {
+                        // HTML structure for displaying each event
+                        echo '
+                        <div class="grid-container">
+                            <div class="greyed" style="height: 90%;">
+                                <img src="memberWebsite/' . $row['pictures'] . '" alt="Image" style="width: 300px; height: 200px; object-fit: cover;">
+                                <h3 style="font-family: Open Sans; font-size: 24px;">' . $row['event_date'] . '</h3>
+                                <div style="display: flex; justify-content: space-around; margin-top: 10px;">
+                                    <button class="btn-update" onclick="openUpdateModal(' . $row['id'] . ', \'' . htmlspecialchars($row['name'], ENT_QUOTES) . '\', \'' . htmlspecialchars($row['pictures'], ENT_QUOTES) . '\', \'' . htmlspecialchars($row['description'], ENT_QUOTES) . '\', \'' . htmlspecialchars($row['event_date'], ENT_QUOTES) . '\')">Update</button>
+                                    <button class="btn-delete" onclick="openDeleteModal(' . $row['id'] . ')">Delete</button>
+                                </div>
                             </div>
-                        </div>
-                        <a></a>
-                        <h3  onclick="location=\'project.php?id=' . $row['id'] . '\'" style=" cursor: pointer !important; font-family: Open Sans; font-size: 21px; color: #444444; position: relative; bottom: 10px; font-style: italic;">' . $row['name'] . '</h3>
-                    </div>';
-
-                }
+                            <a></a>
+                            <h3  onclick="location=\'project.php?id=' . $row['id'] . '\'" style="cursor: pointer !important; font-family: Open Sans; font-size: 21px; color: #444444; position: relative; bottom: 10px; font-style: italic;">' . $row['name'] . '</h3>
+                        </div>';
+                    }
 
                 } else {
                     // If no events found
@@ -119,21 +118,29 @@
 function closeDeleteModal() {
     document.getElementById('deleteModal').style.display = 'none';
 }
-function openUpdateModal(id, name, pictures, description, event_date) {
+function openUpdateModal(id, name, picture, description, eventDate) {
+    // Set the values in the modal fields
     document.getElementById('updateId').value = id;
-    document.getElementById('updateDate').value = event_date;
     document.getElementById('updateName').value = name;
+    document.getElementById('existing_pictures').value = picture; // Set the hidden field value
     document.getElementById('updateDescription').value = description;
-    
-    // Set the existing picture URL if available
-    document.getElementById('existingPicture').src = pictures ? pictures : 'default-placeholder.png';
-    
-    document.getElementById('updateModal').style.display = 'block';
+    document.getElementById('updateDate').value = eventDate;
+
+    // Set the image source for the current picture
+    const existingPicture = document.getElementById('existingPicture');
+    existingPicture.src = 'memberWebsite/' + picture; // Adjust the path as necessary
+
+    // Open the modal
+    const modal = document.getElementById('updateModal');
+    modal.style.display = 'block';
 }
 
+// Function to close the modal
 function closeUpdateModal() {
-    document.getElementById('updateModal').style.display = 'none';
+    const modal = document.getElementById('updateModal');
+    modal.style.display = 'none';
 }
+
 </script>
 
     <style>

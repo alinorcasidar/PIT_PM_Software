@@ -134,15 +134,29 @@
         color: #d6adff;
         margin: 0;
     }
+        @media (max-width: 1111px) {
+            .hide-on-mobile2{
+                font-size: 20px !important;
+            }
+            .img-logo2{
+                width: 50px !important;
+                height: 50px !important;
+            }
+        }
+        @media (max-width: 554px) {
+            .hide-on-mobile2{
+                display: none !important;
+            }
+        }
 
-</style>
+    </style>
 
 
 
 <div class="navbar">
     <div class="title-header" onclick="location='member_index.php'" style="cursor: pointer; position:relative; left: 50px;">
-        <img src="member_assets/img/sta_ana_logo.png" alt="Logo">
-        <h2 style="position:relative; top: 8px; left: 10px;" class="hide-on-mobile">
+        <img class="img-logo2" src="member_assets/img/sta_ana_logo.png" alt="Logo">
+        <h2 style="position:relative; top: 8px; left: 10px;" class="hide-on-mobile2">
             SANGGUNIANG KABATAAN<br>
             <span>Sta Cruz, Tagologoan, Misamis Oriental</span>
         </h2>
@@ -154,9 +168,11 @@
             <a href="member_index.php" class="<?= $current_page == 'member_index.php' ? 'active' : '' ?>">Home</a>
         </li>
     <?php endif; ?>
-    <li class="hide-on-mobile" style="font-family: 'Open Sans';">
-            <a href="member_home.php" class="<?= $current_page == 'member_home.php' ? 'active' : '' ?>">Home</a>
-        </li>
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <li class="hide-on-mobile" style="font-family: 'Open Sans';">
+                <a href="member_home.php" class="<?= $current_page == 'member_home.php' ? 'active' : '' ?>">Home</a>
+            </li>
+        <?php endif; ?>
         <li class="hide-on-mobile"  style="font-family: 'Open Sans';">
             <a href="member_about.php" class="<?= $current_page == 'member_about.php' ? 'active' : '' ?>">About</a>
         </li>

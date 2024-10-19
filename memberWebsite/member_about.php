@@ -14,9 +14,6 @@
 </head>
 <body>
 <style>
-    html, body {
-        overflow-x: hidden; /* Disable horizontal scrolling */
-    }
     .logo {
         display: flex; /* Use flexbox for inline layout */
         justify-content: center; /* Center items horizontally */
@@ -24,21 +21,19 @@
         margin: 20px 0; /* Optional: Add some margin for spacing */
     }
     .logo img {
-        max-width: 100%; /* Ensure images are responsive */
-        height: auto; /* Maintain aspect ratio */
-        margin: 0 10px; /* Optional: Add spacing between images */
+       
     }
     .img-1 {
         display: block; /* Block display to ensure it takes full width */
-        max-width: 300px !important;
+        max-width: 20% !important;
         height: auto !important; /* Maintain aspect ratio */
     }
     .img-2 {
-        max-width: 320px !important;
+        max-width: 20% !important;
         height: auto !important; /* Maintain aspect ratio */
     }
     .img-3 {
-        max-width: 250px !important;
+        max-width: 15% !important;
         height: auto !important; /* Maintain aspect ratio */
     }
     .mission-vision-text{
@@ -114,6 +109,103 @@
     .context{
         padding-left: 50px !important;
     }
+
+
+    @media (max-width: 1323px) {
+        .two-col{
+            width: 100% !important;
+            align-items: center !important;
+            margin-left: 160px!important;
+            text-align: center !important;
+        }
+        .context{
+            margin-top: 70px !important;
+        }
+        .context-mission{
+            margin-left: 70px !important;
+            margin-right: 40px !important;
+            
+        }
+        .context-mission p{
+            position: relative !important;
+            bottom: 200px !important;
+        }
+        .context-mission h2{
+            position: relative !important;
+            bottom: 200px !important;
+        }
+    }
+    @media(max-width: 1000px) {
+        .mission-vision-text{
+            font-size: 45px !important;
+        }
+        .about-text{
+            font-size: 22px !important;
+            margin-left: 80px !important;
+        }
+        .context-mission h2, .context h2{
+            font-size: 30px !important;
+        }
+        .context-mission p, .context p{
+            font-size: 20px !important;
+        }
+    }
+    @media(max-width: 641px) {
+        .mission-vision-text{
+            font-size: 35px !important;
+        }
+        .about-text{
+            font-size: 17px !important;
+        }
+        .context-mission h2, .context h2{
+            font-size: 25px !important;
+        }
+        .context-mission p, .context p{
+            font-size: 15px !important;
+            width: 100% !important;
+            padding: 0px !important;
+        }
+    }
+    @media(max-width: 491px) {
+        .mission-vision-text{
+            font-size: 25px !important;
+        }
+        .about-text{
+            font-size: 12px !important;
+            margin-left: 120px !important;
+        }
+        .context-mission h2, .context h2{
+            font-size: 18px !important;
+        }
+        .context-mission p, .context p{
+            font-size: 12px !important;
+            width: 350px !important;
+            padding: 0px !important;
+
+        }
+        .context{
+            position: relative !important;
+            right: 150px !important;
+        }
+        .context-mission{
+            position: relative !important;
+            right: 30px !important;
+        }
+    }
+    @media(max-width: 437px) {
+        .mission-vision-text{
+            margin-left: 20px !important;
+        }
+        .context{
+            position: relative !important;
+            right: 180px !important;
+        }
+        .context-mission{
+            position: relative !important;
+            right: 55px !important;
+        }
+    }
+    
 </style>
 
 

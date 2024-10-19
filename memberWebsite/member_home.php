@@ -42,6 +42,7 @@
 }
  .reminder-location, .reminder-event, .reminder-date {
     padding-left: 15px !important;
+    font-family: 'Open Sans';
  }
 
 .reminder-item:hover {
@@ -385,6 +386,7 @@
     </div>
     <div class="two-col content" style="position: relative; right: 50px !important; width: 500px;" >
                 <h3>HOME</h3>
+                
                 <h1 class="introducing" style=" position: relative !important; bottom: 10px !important; font-family: 'Old Standard TT'; font-weight: lighter !important; font-size: 64px; width: 700px;">INTRODUCING</h1>
                 <p style="font-style: normal !important; " class="welcome-intro">Welcome to our website dedicated to youth data profiling in Baranggay Sta. Cruz, Tagoloan, Misamis Oriental! Our platform serves as a comprehensive tool for gathering, organizing, and analyzing crucial data pertaining to the youth demographic in this community.</p>
                 <div class="welcome">

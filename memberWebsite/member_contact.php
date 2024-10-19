@@ -488,6 +488,11 @@
             }
             
         }
+        @media screen and (max-width: 800px) {
+            .hero-page{
+                padding-bottom: 250px !important;
+            }
+        }
            
     </style>
     <?php require_once 'member_component/navbar.php' ?>
