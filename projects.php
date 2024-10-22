@@ -284,7 +284,7 @@ function closeUpdateModal() {
         @media (min-width: 471px) and (max-width: 576px) {
             .project-grid {
                 max-width: 400px !important; /* Full width */
-                flex-wrap: nowrap !i    mportant; /* Prevent wrapping */
+                flex-wrap: nowrap !important; /* Prevent wrapping */
                 overflow-x: auto !important; /* Enable horizontal scroll */
                 margin-bottom: 0; /* Reset margin */
                 display: flex;
