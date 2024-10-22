@@ -11,8 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $birthday = $_POST['birthday'];
     $gender = $_POST['gender'];
     // Set default values for user_type and isVerified
-    $user_type = 'member'; // Set user type to member
-    $isVerified = 1; // Set isVerified to true (1)
+    $user_type = 'authorized'; // Set user type to member
+    $isVerified = 0; // Set isVerified to true (1)
 
     // Check if email already exists
     $checkEmailQuery = "SELECT email_address FROM Users WHERE email_address = ?";
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($stmt->execute()) {
             // Registration successful, redirect to a success page
-            header('Location: ../login.php?success');
+            header('Location: ../notice.php');
             exit();
         } else {
             // Registration failed, redirect with error

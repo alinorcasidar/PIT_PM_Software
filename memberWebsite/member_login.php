@@ -110,12 +110,12 @@
                 </div>
                 <?php endif; ?>
                 <form action="member_controller/member_login_db.php" method="post">
-                    <input type="text" name="email_address" placeholder="Email Address" >
-                    <input type="password" name="password" placeholder="Password">
+                    <input type="text" name="email_address" placeholder="Email Address"  required>
+                    <input type="password" name="password" placeholder="Password" required>
                     <input  type="submit" class="button" value="Log In" style="font-size: 23px; font-weight: bold; font-family: 'Open Sans';" ;>
                     
                 </form>
-                <a class="forgot-password" href="#!" style="margin-left: 110px; font-family:'Blinker'; font-size:18px; color: black; transition: color 0.1s; position: relative; bottom: 10px;" onmousedown="this.style.color='gray';" onmouseup="this.style.color='black';" onmouseleave="this.style.color='black';">Forgot password?</a>
+                <a class="forgot-password" href="member_forgot-password.php" style="margin-left: 110px; font-family:'Blinker'; font-size:18px; color: black; transition: color 0.1s; position: relative; bottom: 10px;" onmousedown="this.style.color='gray';" onmouseup="this.style.color='black';" onmouseleave="this.style.color='black';">Forgot password?</a>
                 <a style="font-family:'Blinker'; font-weight:bold; font-size:23px; position: relative; bottom: 10px;" href="member_create_account.php" class="button">Create new Account</a>
             </div>
         </div>

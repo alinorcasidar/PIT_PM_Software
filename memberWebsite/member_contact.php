@@ -168,7 +168,12 @@
             }
             html, body {
                 overflow: auto !important; /* Allow scrolling */
+                
             }
+            body {
+                    overflow-x: hidden !important; /* Prevent horizontal scroll for the entire page */
+                }
+
             
         }
         @media (min-width: 0px) and (max-width: 589px) {
@@ -488,12 +493,7 @@
             }
             
         }
-        @media screen and (max-width: 800px) {
-            .hero-page{
-                padding-bottom: 250px !important;
-            }
-        }
-           
+
     </style>
     <?php require_once 'member_component/navbar.php' ?>
 

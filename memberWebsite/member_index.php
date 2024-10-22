@@ -131,7 +131,7 @@
     }
     }
     @media (min-width: 0px) and (max-width: 1134px) {
-        img{
+        .img-1{
             position: relative;
             right: 35px !important;
         }

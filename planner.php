@@ -489,6 +489,10 @@ input[type="submit"].button:hover {
         overflow: auto; /* Allow scrolling */
         padding-bottom: 200px !important;
     }
+    body {
+    overflow-x: hidden;
+}
+
 }
 @media (max-width: 544px) {
     .hero-page{

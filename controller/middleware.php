@@ -1,7 +1,7 @@
 <?php
 
 // Define the pages that can be accessed without being logged in
-$public_pages = ['index.php', 'login.php', 'create_account.php'];
+$public_pages = ['index.php', 'login.php', 'create_account.php', 'notice.php', 'forgot-password.php'];
 
 // Get the current page
 $current_page = basename($_SERVER['PHP_SELF']);

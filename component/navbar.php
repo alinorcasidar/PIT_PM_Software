@@ -150,7 +150,7 @@
 <div class="navbar">
     <div class="title-header" onclick="location='index.php'" style="cursor: pointer; position:relative; left: 50px;">
         <img class="img-logo" src="assets/img/sta_ana_logo.png" alt="Logo">
-        <h2 style="position:relative; top: 8px; left: 10px;" class="hide-on-mobile">
+        <h2 style="position:relative; top: 8px; left: 10px;" class="hide-on-mobile2">
             SANGGUNIANG KABATAAN<br>
             <span>Sta Cruz, Tagologoan, Misamis Oriental</span>
         </h2>

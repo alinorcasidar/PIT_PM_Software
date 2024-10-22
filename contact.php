@@ -103,6 +103,10 @@
                 max-width: 100% !important; /* Limit the maximum width to 100% */
                 
             }
+            body {
+                overflow-x: hidden !important; /* Prevent horizontal scroll for the entire page */
+            }
+
             .hero-page {
                 flex-direction: column; /* Stack content vertically */
                 text-align: center;     /* Center text in smaller screens */
@@ -131,7 +135,7 @@
                color: white !important;
             }
             html, body {
-                overflow: auto !important; /* Allow scrolling */
+                overflow-y: auto !important; /* Allow scrolling */
             }
         }
         @media (min-width: 0px) and (max-width: 589px) {

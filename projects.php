@@ -284,7 +284,7 @@ function closeUpdateModal() {
         @media (min-width: 471px) and (max-width: 576px) {
             .project-grid {
                 max-width: 400px !important; /* Full width */
-                flex-wrap: nowrap !important; /* Prevent wrapping */
+                flex-wrap: nowrap !i    mportant; /* Prevent wrapping */
                 overflow-x: auto !important; /* Enable horizontal scroll */
                 margin-bottom: 0; /* Reset margin */
                 display: flex;
@@ -388,6 +388,7 @@ function closeUpdateModal() {
                 flex-wrap: nowrap !important; /* Prevent wrapping */
                 overflow-x: auto !important; /* Enable horizontal scroll */
             }
+            
 
             .grid-container {
                 margin-right: 20px; /* Add margin between items */
@@ -415,7 +416,7 @@ function closeUpdateModal() {
                 width: 100% !important;
             }
         }
-
+       
     </style>
 </body>
 </html>

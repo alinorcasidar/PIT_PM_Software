@@ -186,6 +186,10 @@
         overflow: auto; /* Allow scrolling */
         padding-bottom: 200px !important;
     }
+    body {
+        overflow-x: hidden;
+    }
+
     .card {
         width: 90% !important; /* Make the card take 90% width of the container */
     }

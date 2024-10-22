@@ -25,40 +25,88 @@
             left: 10px !important;
             font-family: 'Open Sans' !important;
         }
+        .hero-page .cards .card input {
+            display: block;
+            padding: 13px 24px;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.073);
+            color: black;
+            border: 0;
+            font-size: 16px;
+            margin: 20px 0 !important; 
+            width: 100%;   
+            border: 2px solid transparent; 
+            outline: 0;
+        }
+        .lname{
+            position: relative !important;
+            left: 12px !important;
+        }
 
-        
+
         @media (max-width: 585px) {
-            .fname, .lname, .bday,.gender{
+            .fname{
                 width: 95px !important;
                 font-size: 8px !important;
+
+ 
+                position: relative !important;
+                bottom: 20px !important;
             }
+            .gender{
+                width: 95px !important;
+                font-size: 8px !important;
+                position: relative !important;
+                bottom: 20px !important;
+                right: 10px !important;
+            }
+            .bday{
+                width: 95px !important;
+                font-size: 8px !important;
+                position: relative !important;
+                bottom: 20px !important;
+            }
+            .lname{
+                width: 95px !important;
+                font-size: 8px !important;
+                position: relative !important;
+                bottom: 20px !important;
+                left: 5px !important;            
+                }
             .email, .password, .phone{
                 font-size: 8px !important;
+            }
+            .email{
+                position: relative !important;
+                bottom: 35px !important;
             }
             .create-title, .button{
                 font-size: 15px !important;
             }
             .hero-page .card, .cards{
-                height: 350px !important;
+                height: 340px !important;
             }
             input, .password, .email, .bday, .gender, .phone{
                 margin-top: 8px !important;
             }
             .phone{
                 position: relative;
-                bottom: 15px;
+                bottom: 67px;
             }
-            .password, .bday, .gender, .button{
+            .password{
                 position: relative;
-                bottom: 28px;
+                bottom: 81px;
+            }
+            .bday, .gender{
+                position: relative  !important;
+                bottom: 95px !important;
             }
             .button{
                 position: relative;
-                bottom: 40px !important;
+                bottom: 125px !important;
+                width: 195px !important;
             }
-            .card{
-                height: 420px !important;
-            }
+
             input, .fname, .lname, .email, .password, .phone, .bday, .gender {
                 padding: 10px 15px !important; /* 10px top and bottom, 15px left and right */
             }
@@ -68,12 +116,31 @@
             max-width: none !important;
             width: 530px !important;
         }
+        .email, .password, .phone{  
+            width: 195px !important;
+        }
+        .cards{
+            max-width: 279px !important;  
 
+        }
+        .error-message{
+                font-size: 7px !important;
+                position: relative !important;
+                bottom: 55px !important;
+                padding-top: 10px !important;
+            }
         }
         @media (min-width: 585px) and (max-width: 625px) {
             .fname, .lname, .bday,.gender{
                 width: 115px !important;
                 font-size: 10px !important;
+            }
+            .email{
+                position: relative !important;
+                bottom: 15px !important;
+            }
+            .cards{
+                max-width: 320px !important;
             }
             .email, .password, .phone{
                 font-size: 10px !important;
@@ -82,28 +149,37 @@
                 font-size: 20px !important;
             }
             .hero-page .card, .cards{
-                height: 380px !important;
+                height: 400px !important;
             }
             input, .password, .email, .bday, .gender, .phone{
                 margin-top: 8px !important;
             }
             .phone{
                 position: relative;
-                bottom: 15px;
+                bottom: 50px !important;
             }
-            .password, .bday, .gender, .button{
+            .bday, .gender{
                 position: relative;
-                bottom: 28px;
+                bottom: 80px;
+            }.password{
+                position: relative;
+                bottom: 65px !important;
             }
             .button{
                 position: relative;
-                bottom: 40px !important;
+                bottom: 110px !important;
             }
             .card{
-                height: 420px !important;
+                height: 440px !important;
             }
             input, .fname, .lname, .email, .password, .phone, .bday, .gender {
                 padding: 10px 15px !important; /* 10px top and bottom, 15px left and right */
+            }
+            .error-message{
+                font-size: 9px !important;
+                position: relative !important;
+                bottom: 38px !important;
+                padding-top: 10px !important;
             }
 
         }
@@ -111,6 +187,9 @@
             .fname, .lname, .bday,.gender{
                 width: 135px !important;
                 font-size: 12px !important;
+            }
+            .cards{
+                max-width: 359px !important;
             }
             .email, .password, .phone{
                 font-size: 12px !important;
@@ -125,20 +204,39 @@
             input, .password, .email, .bday, .gender, .phone{
                 margin-top: 8px !important;
             }
+            .email{
+                position: relative;
+                bottom: 13px;
+                max-width: 100% !important;
+            }
             .phone{
                 position: relative;
-                bottom: 15px;
+                bottom: 42px;
             }
             .password, .bday, .gender, .button{
                 position: relative;
-                bottom: 28px;
+                bottom: 55px;
             }
             .button{
                 position: relative;
                 bottom: 40px !important;
             }
             .card{
-                height: 420px !important;
+                height: 440px !important;
+            }
+            .bday, .gender{
+                position: relative;
+                bottom: 67px !important;
+            }
+            .error-message{
+                font-size: 10px !important;
+                position: relative !important;
+                bottom: 35px !important;
+                padding-top: 10px !important;
+            }
+            .button{
+                position: relative !important;
+                bottom: 100px !important
             }
         }
         @media (min-width: 665px) and (max-width: 705px) {
@@ -149,6 +247,9 @@
             .email, .password, .phone{
                 font-size: 15px !important;
             }
+            .cards{
+                max-width: 400px !important;
+            }
         }
         @media (min-width: 705px) and (max-width: 726px) {
             .fname, .lname, .bday,.gender{
@@ -158,6 +259,9 @@
         @media (min-width: 726px) and (max-width: 755px) {
             .fname, .lname, .bday,.gender{
                 width: 185px !important;
+            }
+            .cards{
+                max-width: 460px !important;
             }
             
         }
@@ -181,7 +285,16 @@
         .context{
             padding-left: 50px;
         }
-        
+        .form-group {
+    margin-bottom: 15px; /* Space between form elements */
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px; /* Space between input and error message */
+}
+
 
     }
     </style>

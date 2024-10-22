@@ -134,6 +134,7 @@
         color: #d6adff;
         margin: 0;
     }
+
         @media (max-width: 1111px) {
             .hide-on-mobile2{
                 font-size: 20px !important;
@@ -154,7 +155,7 @@
 
 
 <div class="navbar">
-    <div class="title-header" onclick="location='member_index.php'" style="cursor: pointer; position:relative; left: 50px;">
+    <div class="title-header" onclick="location='member_home.php'" style="cursor: pointer; position:relative; left: 50px;">
         <img class="img-logo2" src="member_assets/img/sta_ana_logo.png" alt="Logo">
         <h2 style="position:relative; top: 8px; left: 10px;" class="hide-on-mobile2">
             SANGGUNIANG KABATAAN<br>
